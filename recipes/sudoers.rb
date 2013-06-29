@@ -1,4 +1,4 @@
-template '/etc/sudoers' do
+template '/etc/sudoers.d/rbenv' do
   backup false
   source 'sudoers.erb'
   owner 'root'
