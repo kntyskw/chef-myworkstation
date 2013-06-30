@@ -11,14 +11,14 @@ template "/etc/profile.d/rbenv.sh" do
 	mode 0755
 end
 
-git "#{Chef::Config[:file_cache_path]}/ruby-build" do
+git "/tmp/ruby-build" do
   repository "git://github.com/sstephenson/ruby-build.git"
   reference "master"
   action :sync
 end
 
 bash "rbenv setup" do
-	cwd "#{Chef::Config[:file_cache_path]}/ruby-build"
+	cwd "/tmp/ruby-build"
 	code <<-EOF
 	    ./install.sh
 	    source /etc/profile.d/rbenv.sh
