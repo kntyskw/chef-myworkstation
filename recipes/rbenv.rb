@@ -22,13 +22,13 @@ bash "rbenv setup" do
 	code <<-EOF
 	    ./install.sh
 	    source /etc/profile.d/rbenv.sh
+      export CONFIGURE_OPTS="--with-openssl-dir=/usr/include/openssl"
 	    rbenv install #{node[:ruby][:version]}
+	    #ruby-build #{node[:ruby][:version]} /usr/local/rbenv/versions/#{node[:ruby][:version]} --with-openssl-dir=/usr/include/openssl
 	    rbenv global #{node[:ruby][:version]}
 	    rbenv rehash
 	EOF
 end
-
-gem_package "berkshelf"
 
 
 
