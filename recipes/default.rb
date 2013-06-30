@@ -12,6 +12,7 @@ package "zip"
 package "unzip"
 package "gcc"
 package "bind-utils"
+package "openssl-devel"
 package "libxml2-devel"
 package "libxslt-devel"
 
