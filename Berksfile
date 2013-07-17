@@ -2,5 +2,5 @@ site :opscode
 
 metadata
 
-cookbook "yum"
-cookbook "python"
+#cookbook "yum"
+#cookbook "python"
